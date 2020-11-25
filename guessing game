@@ -1,21 +1,30 @@
-#guessing game 
-print("1)its need a tall head to eat the food ? what is it?")
-secret_word="giraffe"
-guess=""
-guess_count=0
-guess_limit=3
-out_of_guesses=False
+name=input("enter your name to start the game")
+print("Welcome ",name," lets start!!!")
+questions=["1)its need a tall head to eat the food ? what is it?","2)if you have it you want to share it,if you share it you doint have it","3)i am a 8 letters word and i have all lettetrs guess me?"]
+answers=["giraffe","secret","alphabets"]
+score=0
+for i in range(len(questions)):
+    print("-----------------------------------------------------------------")
+    print(questions[i])
+    secret_word=answers[i]
+    guess=""
+    guess_count=0
+    guess_limit=3
+    out_of_guesses=False
+    
+    while guess!=secret_word  and not(out_of_guesses):
+      if guess_count < guess_limit:
+         guess=input("enter your guess: ")
+         guess_count+=1
+      else:
+          
+        out_of_guesses=True
+    if out_of_guesses:
+      print("ohh ohh! out of guesses")
+    else:
+      score+=10
 
-while guess!=secret_word  and not(out_of_guesses):
-  if guess_count < guess_limit:
-     guess=input("enter your guess: ")
-     guess_count+=1
-  else:
-    out_of_guesses=True
-if out_of_guesses:
-  print("ohh ohh! out of guesses ,sry you lose")
-else:
-  print("YOU WIN BROH")
+print("you got ",score, "out of 30")
   
   
 
